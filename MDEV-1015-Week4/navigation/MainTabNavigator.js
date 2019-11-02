@@ -7,6 +7,7 @@ import ScheduleScreen from '../screens/ScheduleScreen';
 import ArtistsScreen from '../screens/ArtistsScreen';
 import AboutScreen from '../screens/AboutScreen';
 
+
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
@@ -20,16 +21,15 @@ const ScheduleStack = createStackNavigator(
 );
 
 ScheduleStack.navigationOptions = {
-  tabBarLabel: 'Schedule1',
-  headerTintColor: "blue",
-  headerStyle: {
-    backgroundColor: 'red'
-  },
+  tabBarLabel: 'Schedules',
 
   
-  tabBarIcon: ({ focused }) => (
+
+  
+  tabBarIcon: ({ focused,tintColor }) => (
     <TabBarIcon
       focused={focused}
+      tintColor={{ tintColor }}
       name={
         Platform.OS === 'ios'
           ? `ios-calendar`
@@ -37,6 +37,18 @@ ScheduleStack.navigationOptions = {
       }
     />
   ),
+  tabBarOptions: {
+    activeTintColor: '#cd077d',
+    activeTintColor: '#e07204',
+  activeBackgroundColor : "#e07204",
+  inactiveTintColor : "#e07204",
+  tabStyle : {
+    backgroundColor:"#0a0a09"
+
+  }
+    
+
+}
 };
 
 ScheduleStack.path = '';
@@ -84,8 +96,28 @@ const tabNavigator = createBottomTabNavigator({
   ScheduleStack,
   ArtistsStack,
   AboutStack,
-});
+ 
+  
+  
+  
+  
+  
+},
+{
+tabBarOptions: {
+  activeTintColor: '#e07204',
+  activeBackgroundColor : "#e07204",
+  inactiveTintColor : "#e07204",
+  tabStyle : {
+    backgroundColor:"#0a0a09"
+
+  }
+}});
 
 tabNavigator.path = '';
+
+
+
+
 
 export default tabNavigator;

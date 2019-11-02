@@ -22,9 +22,9 @@ const ArtistsScreen = (props) => {
    navigationOptions = {
     title: 'Home',
     headerStyle: {
-      backgroundColor: '#f4511e',
+      backgroundColor: '#0a0a09',
     },
-    headerTintColor: '#fff',
+    headerTintColor: '#0a0a09',
     headerTitleStyle: {
       fontWeight: 'bold',
     },
@@ -35,6 +35,10 @@ const ArtistsScreen = (props) => {
   }
   const [ artists, setArtists ] = useState([]);
   const [ dataLoaded, setDataLoaded ] = useState(false);
+  var random_images =["https://img.youtube.com/vi/hcDC-Nf5uvI/0.jpg",
+                      "https://snworksceo.imgix.net/mnd/186b6d60-1274-468c-a8e8-a4ea765367c4.sized-1000x1000.jpg",
+                      "https://www.udiscovermusic.com/wp-content/uploads/2017/11/Neil-Diamond-The-Jazz-Singer-album-cover-web-optimised-820-820x600.jpg",
+                       "https://media.npr.org/assets/img/2013/10/23/edmclassical_wide-a8488203c823c5c6389c34c26d5a103c107bcf5c-s800-c85.jpg"]
   
   useEffect(() => {
     if (!dataLoaded) {
@@ -89,10 +93,10 @@ const ArtistsScreen = (props) => {
         <View style={{ backgroundColor: "#0a0a09", borderRadius: 10, overflow: "hidden" }}>
           <View>
             <Image
-              source={{ uri: 'https://media.npr.org/assets/img/2013/10/23/edmclassical_wide-a8488203c823c5c6389c34c26d5a103c107bcf5c-s800-c85.jpg' }}
+              source={{ uri: 'https://besthqwallpapers.com/Uploads/19-11-2018/72032/thumb2-marshmello-american-dj-red-smoke-stylish-art-4k.jpg' }}
               style={{
                 
-                height: 135,
+                height: 400,
                 width: 600
               }}
             />
@@ -169,5 +173,12 @@ const ArtistsScreen = (props) => {
 export default ArtistsScreen;
 
 ArtistsScreen.navigationOptions = {
-  title: 'Artists1',
+  title: 'Artists',
+  headerStyle: {
+    backgroundColor: '#0a0a09',
+  },
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    color:"#e07204",
+  }
 };
